@@ -74,19 +74,28 @@ df3.data <- subset(df3.data,select=grep("meanFreq",names(df3.data),value=TRUE,in
 #######################################
 #######################################
 # Step 3.  Add descriptive activity names for activities
-df3.data$Activity <-  factor(df3.data$ActivityNum, labels=df.activityNames$Activity)
+final.data <- df3.data
+final.data$SubjectNum <- factor(final.data$SubjectNum)
+final.data$Activity <-  factor(final.data$ActivityNum, labels=df.activityNames$Activity)
 
 #######################################
 #######################################
 # Step 4.  Appropriately labels the dataset with descriptive variable names
 # No further action needed here - variables are already labeled in above steps
-str(df3.data)
-head(df3.data)
+str(final.data)
 
 #######################################
 #######################################
 # Step 5.  CReate a second dataset with the average of each variable by activity & subject.
-df4.means <- aggregate(df3.data,list(SubjectNum = df3.data$SubjectNum, ActivityNum=df3.data$ActivityNum),mean)
-df4.means$Activity <- NULL
-df4.means[,c(3,4)] <- NULL
-str(df4.means)
+final.means <- aggregate(df3.data,list(SubjectNum = df3.data$SubjectNum, ActivityNum=df3.data$ActivityNum),mean)
+final.means$SubjectNum <- factor(final.means$SubjectNum)
+final.means[,c(3,4)] <- NULL
+str(final.means)
+
+# Write the output files to CRV format
+
+outputfile = "./finaldata.txt"
+fwrite(final.data,outputfile,row.name=FALSE)
+
+outputfile = "./finalmeans.txt"
+fwrite(final.means,outputfile,row.name=FALSE)

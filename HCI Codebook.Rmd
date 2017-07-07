@@ -13,7 +13,7 @@ There are two data files provided:
 
 ```{r }
 require(data.table)
-inputfile = "./finaldata.csv"
+inputfile = "./finaldata.txt"
 df1 <- fread(inputfile, stringsAsFactors = TRUE)
 
 str(df1)
@@ -24,7 +24,7 @@ str(df1)
 2. finalmeans - a CSV file containing a tidy dataset with mean and std measurements, summarized by SubjectNum and ActivityNum
 
 ```{r}
-inputfile = "./finalmeans.csv"
+inputfile = "./finalmeans.txt"
 df2 <- fread(inputfile, stringsAsFactors = TRUE)
 
 str(df2)

@@ -126,7 +126,7 @@ $(document).ready(function () {
 </ol>
 <pre class="r"><code>require(data.table)</code></pre>
 <pre><code>## Loading required package: data.table</code></pre>
-<pre class="r"><code>inputfile = &quot;./finaldata.csv&quot;
+<pre class="r"><code>inputfile = &quot;./finaldata.txt&quot;
 df1 &lt;- fread(inputfile, stringsAsFactors = TRUE)
 
 str(df1)</code></pre>
@@ -204,7 +204,7 @@ str(df1)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>finalmeans - a CSV file containing a tidy dataset with mean and std measurements, summarized by SubjectNum and ActivityNum</li>
 </ol>
-<pre class="r"><code>inputfile = &quot;./finalmeans.csv&quot;
+<pre class="r"><code>inputfile = &quot;./finalmeans.txt&quot;
 df2 &lt;- fread(inputfile, stringsAsFactors = TRUE)
 
 str(df2)</code></pre>
