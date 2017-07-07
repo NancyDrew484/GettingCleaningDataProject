@@ -1,0 +1,33 @@
+---
+title: "DataCleaning Project Codebook"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls())
+```
+There are two data files provided:
+
+1. finaldata.csv - a CSV file containing a tidy dataset with mean and std measurements for each SubjectNum and ActivityNum.  There are 30 subjects and 6 activities and 67 measurements (e.g. tBodyAcc, TGraavityAcc). 
+
+```{r }
+require(data.table)
+inputfile = "./finaldata.csv"
+df1 <- fread(inputfile, stringsAsFactors = TRUE)
+
+str(df1)
+```
+
+
+
+2. finalmeans - a CSV file containing a tidy dataset with mean and std measurements, summarized by SubjectNum and ActivityNum
+
+```{r}
+inputfile = "./finalmeans.csv"
+df2 <- fread(inputfile, stringsAsFactors = TRUE)
+
+str(df2)
+
+```
+
