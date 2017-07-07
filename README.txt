@@ -8,8 +8,8 @@ The following files are contained with this project:
 1.  Run_analysis.r - R script to read the input files, do the data mangling and then output 2 final data files in CSV format. 
 2.  HCI Codebook.Rmd - R markdown to create HTML codebook
 3.  HCI Codebook.HTML - Codebook (includes code to import data files)
-4.  finaldata.csv - Tidy Data file with individual measurements
-5.  finalmeans.csv - Tidy Data file with summarized measurements (by Subject & Activity)
+4.  finaldata.txt - Tidy Data file with individual measurements
+5.  finalmeans.txt - Tidy Data file with summarized measurements (by Subject & Activity)
 
 Original Data Source:
 
